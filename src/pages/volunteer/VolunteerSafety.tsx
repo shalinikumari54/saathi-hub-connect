@@ -534,7 +534,7 @@ const VolunteerSafety = () => {
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">< 2 min</div>
+              <div className="text-2xl font-bold text-primary">&lt; 2 min</div>
               <p className="text-sm text-muted-foreground">Average SOS response time</p>
             </CardContent>
           </Card>
