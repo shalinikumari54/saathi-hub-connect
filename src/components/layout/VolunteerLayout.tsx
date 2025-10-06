@@ -38,7 +38,7 @@ const VolunteerLayout = ({ children }: VolunteerLayoutProps) => {
     {
       title: "Available Tasks",
       icon: Search,
-      url: "/volunteer/tasks",
+      url: "/volunteer/available-tasks",
       badge: "12"
     },
     {
@@ -50,7 +50,7 @@ const VolunteerLayout = ({ children }: VolunteerLayoutProps) => {
     {
       title: "My Seniors",
       icon: Users,
-      url: "/volunteer/seniors",
+      url: "/volunteer/my-seniors",
       badge: null
     },
     {
@@ -132,11 +132,11 @@ const VolunteerLayout = ({ children }: VolunteerLayoutProps) => {
             {/* Quick Actions */}
             <div className="p-4 border-b">
               <div className="space-y-2">
-                <Button className="w-full justify-start" size="sm">
+                <Button className="w-full justify-start" size="sm" onClick={() => navigate("/volunteer/available-tasks")}>
                   <Search className="h-4 w-4 mr-2" />
                   Find Tasks
                 </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
+                <Button variant="outline" className="w-full justify-start" size="sm" onClick={() => navigate("/volunteer/safety")}>
                   <Shield className="h-4 w-4 mr-2" />
                   SOS Alert
                 </Button>
