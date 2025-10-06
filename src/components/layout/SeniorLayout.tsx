@@ -37,19 +37,19 @@ const SeniorLayout = ({ children }: SeniorLayoutProps) => {
     {
       title: "My Tasks",
       icon: Calendar,
-      url: "/senior/tasks",
+      url: "/senior/my-tasks",
       badge: "2"
     },
     {
       title: "My Events",
       icon: Calendar,
-      url: "/senior/events",
+      url: "/senior/my-events",
       badge: null
     },
     {
       title: "My Volunteers",
       icon: Users,
-      url: "/senior/volunteers",
+      url: "/senior/my-volunteers",
       badge: null
     },
     {
@@ -67,7 +67,7 @@ const SeniorLayout = ({ children }: SeniorLayoutProps) => {
     {
       title: "Location Tracking",
       icon: MapPin,
-      url: "/senior/tracking",
+      url: "/senior/location-tracking",
       badge: null
     },
     {
@@ -110,11 +110,11 @@ const SeniorLayout = ({ children }: SeniorLayoutProps) => {
             {/* Quick Actions */}
             <div className="p-4 border-b">
               <div className="space-y-2">
-                <Button className="w-full justify-start" size="sm">
+                <Button className="w-full justify-start" size="sm" onClick={() => navigate("/senior/request-help")}>
                   <Plus className="h-4 w-4 mr-2" />
                   Request Help
                 </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
+                <Button variant="outline" className="w-full justify-start" size="sm" onClick={() => navigate("/senior/emergency")}>
                   <Phone className="h-4 w-4 mr-2" />
                   Emergency
                 </Button>
