@@ -6,6 +6,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminVolunteerManagement from "./pages/admin/AdminVolunteerManagement";
+import AdminSeniorManagement from "./pages/admin/AdminSeniorManagement";
+import AdminTaskManagement from "./pages/admin/AdminTaskManagement";
+import AdminEventManagement from "./pages/admin/AdminEventManagement";
+import AdminDonations from "./pages/admin/AdminDonations";
+import AdminRewards from "./pages/admin/AdminRewards";
+import AdminMessages from "./pages/admin/AdminMessages";
+import AdminEmergency from "./pages/admin/AdminEmergency";
+import AdminTracking from "./pages/admin/AdminTracking";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminSettings from "./pages/admin/AdminSettings";
 import SeniorDashboard from "./pages/senior/SeniorDashboard";
 import SeniorMyTasks from "./pages/senior/SeniorMyTasks";
 import SeniorMyEvents from "./pages/senior/SeniorMyEvents";
@@ -37,6 +48,17 @@ const App = () => (
           
           {/* Admin Routes */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/volunteers" element={<AdminVolunteerManagement />} />
+          <Route path="/admin/seniors" element={<AdminSeniorManagement />} />
+          <Route path="/admin/tasks" element={<AdminTaskManagement />} />
+          <Route path="/admin/events" element={<AdminEventManagement />} />
+          <Route path="/admin/donations" element={<AdminDonations />} />
+          <Route path="/admin/rewards" element={<AdminRewards />} />
+          <Route path="/admin/messages" element={<AdminMessages />} />
+          <Route path="/admin/emergency" element={<AdminEmergency />} />
+          <Route path="/admin/tracking" element={<AdminTracking />} />
+          <Route path="/admin/analytics" element={<AdminAnalytics />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
           
           {/* Senior Routes */}
           <Route path="/senior/dashboard" element={<SeniorDashboard />} />
