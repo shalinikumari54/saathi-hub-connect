@@ -42,7 +42,7 @@ const AdminDashboard = () => {
     { name: "Lisa Garcia", points: 1750, tasks: 45, rating: 4.7 }
   ]);
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case "completed": return "bg-green-500";
       case "in-progress": return "bg-blue-500";

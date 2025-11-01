@@ -9,15 +9,10 @@ import { Users, Heart, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-interface LoginModalProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
-
-const LoginModal = ({ open, onOpenChange }: LoginModalProps) => {
+const LoginModal = ({ open, onOpenChange }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedRole, setSelectedRole] = useState<"admin" | "senior" | "volunteer" | null>(null);
+  const [selectedRole, setSelectedRole] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = () => {
