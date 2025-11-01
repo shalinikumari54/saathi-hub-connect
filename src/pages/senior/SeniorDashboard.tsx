@@ -49,7 +49,7 @@ const SeniorDashboard = () => {
     { id: 2, item: "Groceries", status: "pending", amount: "$50", date: "Dec 22" }
   ]);
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "completed": return "bg-green-500";
       case "in-progress": return "bg-blue-500";

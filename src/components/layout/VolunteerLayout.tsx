@@ -20,7 +20,11 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const VolunteerLayout = ({ children }) => {
+interface VolunteerLayoutProps {
+  children: React.ReactNode;
+}
+
+const VolunteerLayout = ({ children }: VolunteerLayoutProps) => {
   const navigate = useNavigate();
   const [notifications] = useState(5);
 

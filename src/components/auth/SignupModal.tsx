@@ -10,9 +10,14 @@ import { Users, Heart, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const SignupModal = ({ open, onOpenChange }) => {
+interface SignupModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const SignupModal = ({ open, onOpenChange }: SignupModalProps) => {
   const [step, setStep] = useState(1);
-  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedRole, setSelectedRole] = useState<"senior" | "volunteer" | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,7 +49,7 @@ const SignupModal = ({ open, onOpenChange }) => {
     }
 
     // Mock signup - in real app, this would create account
-    localStorage.setItem("userRole", selectedRole);
+    localStorage.setItem("userRole", selectedRole!);
     localStorage.setItem("userEmail", formData.email);
     localStorage.setItem("userName", formData.name);
     
@@ -62,7 +67,7 @@ const SignupModal = ({ open, onOpenChange }) => {
     }
   };
 
-  const updateFormData = (field, value) => {
+  const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

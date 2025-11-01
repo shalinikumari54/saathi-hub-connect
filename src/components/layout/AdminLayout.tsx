@@ -4,78 +4,100 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Home, 
-  Calendar, 
+  LayoutDashboard, 
   Users, 
-  MessageSquare, 
+  Heart, 
+  Calendar, 
   DollarSign, 
   Settings, 
   Bell, 
-  Phone,
+  Shield,
+  TrendingUp,
+  MessageSquare,
   MapPin,
-  Heart,
-  LogOut,
-  Plus
+  LogOut
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const SeniorLayout = ({ children }) => {
+interface AdminLayoutProps {
+  children: React.ReactNode;
+}
+
+const AdminLayout = ({ children }: AdminLayoutProps) => {
   const navigate = useNavigate();
-  const [notifications] = useState(3);
+  const [notifications] = useState(5);
 
   const menuItems = [
     {
       title: "Dashboard",
-      icon: Home,
-      url: "/senior/dashboard",
+      icon: LayoutDashboard,
+      url: "/admin/dashboard",
       badge: null
     },
     {
-      title: "My Tasks",
-      icon: Calendar,
-      url: "/senior/my-tasks",
-      badge: "2"
+      title: "Volunteer Management",
+      icon: Heart,
+      url: "/admin/volunteers",
+      badge: "23"
     },
     {
-      title: "My Events",
-      icon: Calendar,
-      url: "/senior/my-events",
-      badge: null
-    },
-    {
-      title: "My Volunteers",
+      title: "Senior Management",
       icon: Users,
-      url: "/senior/my-volunteers",
+      url: "/admin/seniors",
+      badge: null
+    },
+    {
+      title: "Task Management",
+      icon: Calendar,
+      url: "/admin/tasks",
+      badge: null
+    },
+    {
+      title: "Event Management",
+      icon: Calendar,
+      url: "/admin/events",
+      badge: null
+    },
+    {
+      title: "Donations",
+      icon: DollarSign,
+      url: "/admin/donations",
+      badge: null
+    },
+    {
+      title: "Rewards System",
+      icon: TrendingUp,
+      url: "/admin/rewards",
       badge: null
     },
     {
       title: "Messages",
       icon: MessageSquare,
-      url: "/senior/messages",
-      badge: "3"
+      url: "/admin/messages",
+      badge: "12"
     },
     {
-      title: "Donations",
-      icon: DollarSign,
-      url: "/senior/donations",
-      badge: null
+      title: "Emergency Alerts",
+      icon: Shield,
+      url: "/admin/emergency",
+      badge: "3"
     },
     {
       title: "Location Tracking",
       icon: MapPin,
-      url: "/senior/location-tracking",
+      url: "/admin/tracking",
       badge: null
     },
     {
-      title: "Emergency Contacts",
-      icon: Phone,
-      url: "/senior/emergency",
+      title: "Analytics",
+      icon: TrendingUp,
+      url: "/admin/analytics",
       badge: null
     },
     {
       title: "Settings",
       icon: Settings,
-      url: "/senior/settings",
+      url: "/admin/settings",
       badge: null
     }
   ];
@@ -95,25 +117,11 @@ const SeniorLayout = ({ children }) => {
             {/* Header */}
             <div className="p-4 border-b">
               <div className="flex items-center space-x-2">
-                <Heart className="h-8 w-8 text-primary" />
+                <Shield className="h-8 w-8 text-primary" />
                 <div>
-                  <h2 className="font-bold text-lg">Senior Portal</h2>
+                  <h2 className="font-bold text-lg">Admin Panel</h2>
                   <p className="text-sm text-muted-foreground">Senior Saathi</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="p-4 border-b">
-              <div className="space-y-2">
-                <Button className="w-full justify-start" size="sm" onClick={() => navigate("/senior/request-help")}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  Request Help
-                </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm" onClick={() => navigate("/senior/emergency")}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  Emergency
-                </Button>
               </div>
             </div>
 
@@ -146,11 +154,11 @@ const SeniorLayout = ({ children }) => {
             <div className="mt-auto p-4 border-t">
               <div className="flex items-center space-x-3">
                 <Avatar>
-                  <AvatarFallback>MJ</AvatarFallback>
+                  <AvatarFallback>AD</AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <p className="font-medium text-sm">Mary Johnson</p>
-                  <p className="text-xs text-muted-foreground">Senior Member</p>
+                  <p className="font-medium text-sm">Admin User</p>
+                  <p className="text-xs text-muted-foreground">admin@seniorsaathi.com</p>
                 </div>
                 <Button variant="outline" size="icon" onClick={handleLogout}>
                   <LogOut className="h-4 w-4" />
@@ -192,4 +200,4 @@ const SeniorLayout = ({ children }) => {
   );
 };
 
-export default SeniorLayout;
+export default AdminLayout;
